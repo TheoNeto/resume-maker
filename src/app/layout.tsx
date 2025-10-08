@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Nunito, Nunito_Sans } from "next/font/google";
-import "./globals.css";
 import { cn } from "@/lib/utils";
+import "@/styles/globals.css";
+import { ThemeProvider } from "next-themes";
 
 const fontSans = Nunito_Sans({ subsets: ["latin"], variable: "--font-sans" });
-const fontTitle = Nunito({ subsets: ["latin"], variable: "--font-title" })
+const fontTitle = Nunito({ subsets: ["latin"], variable: "--font-title" });
 
 export const metadata: Metadata = {
   title: "ResumeMaker",
@@ -17,7 +18,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={cn("min-h-screen bg-background font-sans antialiased", fontTitle.variable, fontSans.variable)}>{children}</body>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontTitle.variable,
+          fontSans.variable
+        )}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
