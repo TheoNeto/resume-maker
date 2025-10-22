@@ -29,10 +29,26 @@ export const ResumePage = () => {
       certifications: [],
       experiences: [],
       educations: [],
-      languages: [],
+      language: [],
       projects: [],
       skills: [],
       socialMedias: [],
+    },
+    structure: {
+      template: "ditto",
+      colorTheme: "slate",
+      language: "portuguese",
+      layout: {
+        mainSections: [
+          { key: "socialMedias" },
+          { key: "summary" },
+          { key: "experiences" },
+          { key: "educations" },
+          { key: "certifications" },
+          { key: "projects" },
+        ],
+        sidebarSections: [{ key: "language" }, { key: "skills" }],
+      },
     },
   };
 

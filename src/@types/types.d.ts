@@ -75,7 +75,7 @@ type ResumeContentData = {
   experiences: Partial<ResumeExperienceData>[];
   educations: Partial<ResumeEducationData>[];
   skills: Partial<ResumeSkillData>[];
-  languages: Partial<ResumeLanguageData>[];
+  language: Partial<ResumeLanguageData>[];
   certifications: Partial<ResumeCertificationData>[];
   projects: Partial<ResumeProjectData>[];
 };
@@ -93,7 +93,42 @@ type ResumeContentData = {
   projects: Partial<ResumeProjectData>[];
 };
 
+type ResumeLayoutSection = {
+  id?: string;
+  key: ResumeSections;
+};
+
+type ResumeLanguages =
+  | "english"
+  | "spanish"
+  | "french"
+  | "german"
+  | "italian"
+  | "portuguese";
+
+type ResumeStructureData = {
+  template: ResumeTemplates;
+  colorTheme: string;
+  layout: {
+    mainSections: ResumeLayoutSection[];
+    sidebarSections: ResumeLayoutSection[];
+  };
+  language: ResumeLanguages;
+};
+
 type ResumeData = {
   content: ResumeContentData;
-  // structure: ResumeStructureData;
+  structure: ResumeStructureData;
 };
+
+type ResumeSections =
+  | "summary"
+  | "socialMedias"
+  | "experiences"
+  | "educations"
+  | "skills"
+  | "language"
+  | "certifications"
+  | "projects";
+
+type ResumeTemplates = "eevee" | "onix" | "jynx" | "ditto";

@@ -53,7 +53,7 @@ export const MultiplesSections = () => {
       descriptionKey: "description",
     },
     {
-      formKey: "languages",
+      formKey: "language",
       title: "Idiomas",
       icon: Languages,
       titleKey: "name",

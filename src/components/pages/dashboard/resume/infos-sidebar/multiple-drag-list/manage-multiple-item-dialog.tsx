@@ -152,7 +152,7 @@ const formConfig: FormConfigObject = {
       fullWidth: true,
     },
   ],
-  languages: [
+  language: [
     {
       label: "Nome",
       key: "name",
