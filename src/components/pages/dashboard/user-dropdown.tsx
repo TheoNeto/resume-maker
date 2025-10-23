@@ -42,13 +42,6 @@ export const UserDropdown = ({ user }: UserDropdownProps) => {
           align="center"
           className="w-[var(--radix-dropdown-menu-trigger-width)]"
         >
-          <Link passHref href="/dashboard/account">
-            <DropdownMenuItem className="gap-2">
-              <SquareUser size={16} />
-              Configurações de Conta
-            </DropdownMenuItem>
-          </Link>
-
           <DropdownMenuItem
             className="gap-2 text-red-500"
             onClick={() => signOut({ callbackUrl: "/auth/login" })}

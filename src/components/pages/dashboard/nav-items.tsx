@@ -10,11 +10,6 @@ export const NavItems = () => {
   const pathname = usePathname();
   const navItems = [
     { label: "Currículos", icon: Newspaper, path: "/dashboard/resumes" },
-    {
-      label: "Configurações de Conta",
-      icon: SquareUser,
-      path: "/dashboard/account",
-    },
   ];
 
   return (
