@@ -1,5 +1,7 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import colors from "tailwindcss/colors";
+import tailwindConfig from "../../tailwind.config";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -35,4 +37,29 @@ export const sectionIsEmpty = (section: string, data: any) => {
   }
 
   return false;
+};
+
+export const formatTailwindHTML = (
+  html: string,
+  scructure: ResumeStructureData
+) => {
+  const colorKey = scructure.colorTheme as keyof typeof colors;
+  return `
+    <html>
+       <heade>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = ${JSON.stringify(tailwindConfig)};
+            document.documentElement.style.setProperty(
+              "--resume-primary",
+              "${colors[colorKey][500]}"
+            );
+        </script>
+       </heade>
+
+       <body>
+          ${html}
+       </body>
+    </html>
+  `;
 };

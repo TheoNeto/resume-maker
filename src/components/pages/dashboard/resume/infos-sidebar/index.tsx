@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Logo from "@/assets/logo.svg";
-import { AIGenerationDropdown } from "./ai-generation-dropdown";
 import { Separator } from "@/components/ui/separator";
 import { BasicInfoSection } from "./sections/basic-info";
 import { SummarySection } from "./sections/summary";
@@ -13,8 +12,6 @@ export const InfosSidebar = () => {
         <Link href={"/dashboard/resumes"}>
           <Logo className="w-full max-w-[80px]" />
         </Link>
-
-        <AIGenerationDropdown />
       </div>
 
       <Separator className="my-5" />
